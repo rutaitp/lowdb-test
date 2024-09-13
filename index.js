@@ -33,8 +33,9 @@ app.post('/noCups', (req, res) => {
 
 app.use('/', express.static('public'));
 
-app.listen(5500, () => {
-    console.log('listening at localhost:5500');
+let port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log('Server listening at port: ' + port);
 });
 
 // add route to get all coffee track information
